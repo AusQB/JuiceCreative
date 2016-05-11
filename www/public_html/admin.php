@@ -26,7 +26,6 @@
  */
 	$system_path = './system';
 
-
 /*
  * --------------------------------------------------------------------
  *  Multiple Site Manager
@@ -35,14 +34,12 @@
  * Uncomment the following variables if you are using the Multiple
  * Site Manager: https://ellislab.com/expressionengine/user-guide/cp/sites
  *
- * Set the Short Name of the site this file will display, the URL of
- * this site's admin.php file, and the main URL of the site (without
- * index.php)
+ * The variables set the Short Name of the site this admin.php file
+ * will log into, and its URL.
  *
  */
- //  $assign_to_config['site_name']  = 'domain2_short_name';
- //  $assign_to_config['cp_url'] = 'http://domain2.com/admin.php';
- //  $assign_to_config['site_url'] = 'http://domain2.com';
+//  $assign_to_config['site_name']  = 'domain2_short_name';
+//  $assign_to_config['cp_url'] = 'http://domain2.com/admin.php';
 
 
 /*
@@ -67,54 +64,20 @@
  */
 	$debug = 0;
 
-
-/*
- * --------------------------------------------------------------------
- *  CUSTOM CONFIG VALUES
- * --------------------------------------------------------------------
- *
- * The $assign_to_config array below will be passed dynamically to the
- * config class. This allows you to set custom config items or override
- * any default config values found in the config.php file.  This can
- * be handy as it permits you to share one application between more then
- * one front controller file, with each file containing different
- * config values.
- *
- * Un-comment the $assign_to_config array below to use this feature
- *
- * NOTE: This feature can be used to run multiple EE "sites" using
- * the old style method.  Instead of individual variables you'll
- * set array indexes corresponding to them.
- *
- */
-//	$assign_to_config['template_group'] = '';
-//	$assign_to_config['template'] = '';
-//	$assign_to_config['site_index'] = '';
-//	$assign_to_config['site_404'] = '';
-//	$assign_to_config['global_vars'] = array(); // This array must be associative
-
-
 /*
  * --------------------------------------------------------------------
  *  END OF USER CONFIGURABLE SETTINGS.  DO NOT EDIT BELOW THIS LINE
  * --------------------------------------------------------------------
  */
 
-
-/*
- * ---------------------------------------------------------------
- *  Disable all routing, send everything to the frontend
- * ---------------------------------------------------------------
- */
-	$routing['directory'] = '';
-	$routing['controller'] = 'ee';
-	$routing['function'] = 'index';
+	define('MASKED_CP', TRUE);
 
 /*
  * --------------------------------------------------------------------
  *  Resolve the system path for increased reliability
  * --------------------------------------------------------------------
  */
+	$system_path = $system_path ?: __DIR__;
 
 	if (realpath($system_path) !== FALSE)
 	{
@@ -128,6 +91,7 @@
  *  Now that we know the path, set the main constants
  * --------------------------------------------------------------------
  */
+
 	// The name of this file
 	define('SELF', basename(__FILE__));
 
@@ -143,6 +107,9 @@
 	// The $debug value as a constant for global access
 	define('DEBUG', $debug);  unset($debug);
 
+	// The control panel access constant ensures the CP will be invoked.
+	define('REQ', 'CP');
+
 /*
  * --------------------------------------------------------------------
  *  Set the error reporting level
@@ -157,6 +124,7 @@
 	{
 		error_reporting(0);
 	}
+
 
 /*
  *---------------------------------------------------------------

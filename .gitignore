@@ -1,0 +1,81 @@
+.DS_Store
+
+# Images
+images/avatars/
+images/captchas/
+images/smileys/
+images/member_photos/
+images/signature_attachments/
+images/pm_attachments/
+
+# For security do not publish the following files
+system/expressionengine/config/database.php
+system/expressionengine/config/config.php
+
+# Caches
+sized/
+thumbs/
+_thumbs/
+*/expressionengine/cache/*
+
+# SublimeText
+*.sublime-project
+*.sublime-workspace
+*/sftp-config.json
+
+Assets
+
+www/system
+
+www/public_html/_old
+
+# =========================
+# Operating System Files
+# =========================
+
+# OSX
+# =========================
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+# =========================
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk

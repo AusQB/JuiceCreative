@@ -1,0 +1,70 @@
+{layout="contact/.layout"}
+
+<div class="row">
+    <div class="large-12 columns">
+
+    	<!-- <h1>Contact</h1> -->
+
+        <h2>Let's have a chat <i class="fa fa-coffee"></i></h2>
+
+        {exp:freeform:form form_name="contact" form:id="contact-form" required="first_name|email" inline_errors="yes"}
+			<div class="row">
+	            <div class="medium-6 columns">
+	                <div class="row">
+	                    <div class="medium-6 columns">
+	                    	<label class="show-for-sr">{freeform:label:first_name}</label>
+							{freeform:field:first_name attr:placeholder="First Name (required)" attr:required="required"}
+	                    	{if freeform:error:first_name}<span class="error">{freeform:error:first_name}</span>{/if}
+	                    </div>
+	                    <div class="medium-6 columns">
+	                    	<label class="show-for-sr">{freeform:label:last_name}</label>
+							{freeform:field:last_name attr:placeholder="Last Name"}
+	                    	{if freeform:error:last_name}<span class="error">{freeform:error:last_name}</span>{/if}
+	                    </div>
+	                </div>
+	                <div class="row">
+	                    <div class="large-12 columns">
+	                    	<label class="show-for-sr">{freeform:label:email}</label>
+							{freeform:field:email attr:placeholder="Email (required)" attr:required="required"}
+	                    	{if freeform:error:email}<span class="error">{freeform:error:email}</span>{/if}
+	                    </div>
+	                </div>
+	                <div class="row">
+	                    <div class="large-12 columns">
+	                    	<label class="show-for-sr">{freeform:label:phone}</label>
+							{freeform:field:phone attr:placeholder="Phone"}
+	                    	{if freeform:error:phone}<span class="error">{freeform:error:phone}</span>{/if}
+	                    </div>
+	                </div>
+	                <div class="row">
+	                    <div class="large-12 columns">
+	                    	<label class="show-for-sr">{freeform:label:company}</label>
+							{freeform:field:company attr:placeholder="Company"}
+	                    	{if freeform:error:company}<span class="error">{freeform:error:company}</span>{/if}
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="medium-6 columns">
+	                <div class="row">
+	                    <div class="large-12 columns">
+	                    	<label class="show-for-sr">{freeform:label:user_message}</label>
+							{freeform:field:user_message attr:placeholder="Message"}
+	                    	{if freeform:error:user_message}<span class="error">{freeform:error:user_message}</span>{/if}
+	                    </div>
+	                </div>
+	                <div class="row">
+	                    <div class="large-12 columns clearfix">
+	                        <button class="float-right large button" type="submit" name="submit">Submit</button>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+        {/exp:freeform:form}
+
+        <div id="contact-sent" class="hide">
+            <p class="lead"><i class="fa fa-check-circle" style="color:#95D725;"></i> Form submitted successfully</p>
+            <p>Thanks for enquiring, we'll be in touch as soon as possible.</p>
+        </div>
+
+    </div>
+</div>

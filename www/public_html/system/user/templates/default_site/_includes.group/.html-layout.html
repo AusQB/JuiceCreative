@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+{exp:seo_lite use_last_segment="yes"}
+
+<link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+
+<link href='http://fonts.googleapis.com/css?family=Pacifico|Roboto:300,400,500,700|Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/assets/css/foundation.css" />
+<link rel="stylesheet" href="/assets/css/app.css" />
+
+</head>
+<body class="{if layout:body_class}{layout:body_class}{/if}">
+
+<!-- <div id="blur"></div> -->
+
+<div id="header">
+    <a id="logo" href="/">
+        <img data-interchange="[/assets/img/logo_transparent_230x154.png, small], [/assets/img/logo_transparent_460x308.png, medium]" alt="" />
+    </a>
+    <a id="menu-btn"><i class="fa fa-bars"></i></a>
+</div>
+
+<nav id="main-menu">
+    <div class="row">
+        <div class="large-12 columns">
+        {exp:navee:nav nav_title="main_menu" class="vertical menu" parent_selected_class="active"}
+        </div>
+    </div>
+</nav>
+
+{if segment_1 != ''}
+<div class="parallax-window" data-parallax="scroll" data-image-src="/assets/img/bg_blur.jpg">
+    {if layout:h1}<h1 class="parallax-heading">{layout:h1}</h1>{/if}
+</div>
+{/if}
+
+<div id="contents">
+    <div class="row">
+        <div class="large-12 columns">
+            {layout:contents}
+        </div>
+    </div>
+</div>
+
+<div id="footer">
+    <div class="row">
+        <div class="medium-12 columns text-center">
+            <p id="copyright"><i class="fa fa-copyright"></i> {current_time format="%Y"} {site_name}</p>
+        </div>
+    </div>
+</div>
+
+<script src="/assets/js/vendor/jquery.min.js"></script>
+<script src="/assets/js/vendor/what-input.min.js"></script>
+<script src="/assets/js/vendor/detectmobile.js"></script>
+<script src="/assets/js/vendor/parallax.min.js"></script>
+<script src="/assets/js/foundation.min.js"></script>
+<script src="/assets/js/app.js"></script>
+</body>
+</html>
